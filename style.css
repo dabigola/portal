@@ -1,0 +1,213 @@
+/* Importação da Fonte Chamativa Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+:root {
+    --primary-color: #026c80;   /* Azul Petróleo */
+    --secondary-color: #2a9d8f; /* Verde Água */
+    --accent-color: #e9c46a;    /* Amarelo Ouro */
+    --bg-color: #cfe0e8;        /* Fundo Azulado (não branco) */
+    --text-color: #1a3a45;
+    --white: #ffffff;
+    --radius: 12px;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* CONFIGURAÇÃO GERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border-bottom: 5px solid var(--accent-color);
+}
+
+header h1 {
+    font-weight: 900;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+/* MENU */
+nav {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 15px;
+    border-radius: 25px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+nav a:hover, nav a.ativo {
+    background: var(--accent-color);
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* CONTEÚDO */
+main, .conteudo {
+    max-width: 900px;
+    width: 95%;
+    margin: 25px auto;
+    flex: 1;
+}
+
+/* --- AJUSTE DA IMAGEM DO PORTAL (BANNER) --- */
+.banner {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;           /* Altura automática para não achatar */
+    max-height: 350px;      /* Limite para não ficar gigante */
+    object-fit: contain;    /* MOSTRA A IMAGEM INTEIRA SEM CORTAR */
+    border-radius: var(--radius);
+    background-color: rgba(255, 255, 255, 0.3); /* Fundo sutil caso a imagem seja estreita */
+}
+
+/* TÍTULOS */
+h2 {
+    color: var(--primary-color);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+/* ÍCONES DE DENÚNCIA */
+.icones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.icone {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: var(--shadow);
+}
+
+.icone img {
+    width: 40px; /* Tamanho reduzido */
+    height: 40px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.icone p {
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.icone.selecionado {
+    background: var(--accent-color);
+    border: 2px solid var(--primary-color);
+}
+
+/* FORMULÁRIO */
+.formulario {
+    background: var(--white);
+    padding: 25px;
+    border-radius: var(--radius);
+    margin-top: 25px;
+    display: none;
+    box-shadow: var(--shadow);
+    border-left: 8px solid var(--primary-color);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    font-family: 'Montserrat', sans-serif;
+}
+
+button {
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: var(--secondary-color);
+}
+
+/* CARDS DE PROBLEMAS */
+.grid-problemas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card-problema {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.img-problema {
+    width: 100%;
+    height: 130px; /* Imagem de problemas pequena */
+    object-fit: cover;
+}
+
+.card-info { padding: 15px; }
+
+/* FOOTER */
+footer {
+    background: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    border-top: 4px solid var(--accent-color);
+}
